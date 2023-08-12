@@ -1,0 +1,82 @@
+class Stage {
+	field int b;
+    constructor Stage new() {
+		let b = 1;
+        return this;
+    }
+    method void create() {
+        var int memAddress;
+	    var int x;
+	    let x = 1;
+	    let memAddress = 16547;
+	    while (x < 195) {
+	    	do Memory.poke(memAddress+322+Math.multiply(x,32), 63);
+	    	let x = x + 1;
+	    }
+	    let x = 1;
+	    let memAddress = 16554;
+	    while (x < 195) {
+	    	do Memory.poke(memAddress+322+Math.multiply(x,32), 63);
+	    	let x = x + 1;
+	    }
+	    let x = 1;
+	    let memAddress = 16561;
+	    while (x < 195) {
+	    	do Memory.poke(memAddress+322+Math.multiply(x,32), 63);
+	    	let x = x + 1;
+	    }
+	    let x = 1;
+	    let memAddress = 16376;
+	    while (x < 202) {
+	    	do Memory.poke(memAddress+322+Math.multiply(x,32), 63);
+	    	let x = x + 1;
+	    }
+	    let x = 1;
+	    let memAddress = 16386;
+	    while (x < 22) {
+	    	do Memory.poke(memAddress+322+x, -1);
+	    	do Memory.poke(memAddress+354+x, -1);
+	    	do Memory.poke(memAddress+386+x, -1);
+	    	do Memory.poke(memAddress+418+x, -1);
+	    	do Memory.poke(memAddress+450+x, -1);
+	    	do Memory.poke(memAddress+482+x, -1);
+	    	let x = x + 1;
+	    }
+	    let x = 1;
+	    let memAddress = 16386 + Math.multiply(32, 65);
+	    while (x < 22) {
+	    	do Memory.poke(memAddress+322+x, -1);
+	    	do Memory.poke(memAddress+354+x, -1);
+	    	do Memory.poke(memAddress+386+x, -1);
+	    	do Memory.poke(memAddress+418+x, -1);
+	    	do Memory.poke(memAddress+450+x, -1);
+	    	do Memory.poke(memAddress+482+x, -1);
+	    	let x = x + 1;
+	    }
+    
+	    let x = 1;
+	    let memAddress = 16386 + Math.multiply(32, 130);
+	    while (x < 22) {
+	    	do Memory.poke(memAddress+322+x, -1);
+	    	do Memory.poke(memAddress+354+x, -1);
+	    	do Memory.poke(memAddress+386+x, -1);
+	    	do Memory.poke(memAddress+418+x, -1);
+	    	do Memory.poke(memAddress+450+x, -1);
+	    	do Memory.poke(memAddress+482+x, -1);
+	    	let x = x + 1;
+	    }
+
+	    let x = 1;
+	    let memAddress = 16386 + Math.multiply(32, 195);
+	    while (x < 22) {
+	    	do Memory.poke(memAddress+322+x, -1);
+	    	do Memory.poke(memAddress+354+x, -1);
+	    	do Memory.poke(memAddress+386+x, -1);
+	    	do Memory.poke(memAddress+418+x, -1);
+	    	do Memory.poke(memAddress+450+x, -1);
+	    	do Memory.poke(memAddress+482+x, -1);
+	    	let x = x + 1;
+	    }
+	    return;
+    }
+}

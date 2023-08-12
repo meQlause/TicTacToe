@@ -1,0 +1,8 @@
+class Main {
+   function void main() {
+		var Stage a;
+		let a = Stage.new();
+		do a.create();
+		return;
+   }
+}
