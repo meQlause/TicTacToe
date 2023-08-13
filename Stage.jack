@@ -1,16 +1,27 @@
 class Stage {
-	field Array position;
+	field Array horPosition;
+	field Array verPosition;
     constructor Stage new() {
-		let position = Array.new(9);
-		let position[0] = 16550; 
-		let position[1] = 16557; 
-		let position[2] = 16564;
-		let position[3] = 18598;
-		let position[4] = 18605;
-		let position[5] = 18612;
-		let position[6] = 20742; 
-		let position[7] = 20749;
-		let position[8] = 20756;
+		let horPosition = Array.new(9);
+		let horPosition[0] = 16550; 
+		let horPosition[1] = 16557; 
+		let horPosition[2] = 16564;
+		let horPosition[3] = 18598;
+		let horPosition[4] = 18605;
+		let horPosition[5] = 18612;
+		let horPosition[6] = 20742; 
+		let horPosition[7] = 20749;
+		let horPosition[8] = 20756;
+		let verPosition = Array.new(9);
+		let verPosition[0] = 16552; 
+		let verPosition[1] = 16559; 
+		let verPosition[2] = 16566;
+		let verPosition[3] = 18600;
+		let verPosition[4] = 18607;
+		let verPosition[5] = 18614;
+		let verPosition[6] = 20744; 
+		let verPosition[7] = 20751;
+		let verPosition[8] = 20758;
         return this;
     }
     method void create() {
@@ -92,7 +103,7 @@ class Stage {
 		var int memAddress;
 		var int x;
 		let x = 1;
-		let memAddress = position[i-1] + Math.multiply(32, 32);
+		let memAddress = horPosition[i-1] + Math.multiply(32, 32);
 		while (x < 4) {
 			do Memory.poke(memAddress+160+x, -1);
 			do Memory.poke(memAddress+192+x, -1);
@@ -100,6 +111,32 @@ class Stage {
 			do Memory.poke(memAddress+256+x, -1);
 			do Memory.poke(memAddress+288+x, -1);
 			let x = x + 1;
+		}
+		return;
+	}
+	method void ver(int i) {
+		var int memAddress;
+		var int x;
+		let memAddress = verPosition[i-1] + Math.multiply(32, 25);
+		let x = 0;
+		while (x < 513) {
+			do Memory.poke(x+memAddress+0, 992);
+			do Memory.poke(x+memAddress+32, 992);
+			do Memory.poke(x+memAddress+64, 992);
+			do Memory.poke(x+memAddress+96, 992);
+			do Memory.poke(x+memAddress+128, 992);
+			do Memory.poke(x+memAddress+160, 992);
+			do Memory.poke(x+memAddress+192, 992);
+			do Memory.poke(x+memAddress+224, 992);
+			do Memory.poke(x+memAddress+256, 992);
+			do Memory.poke(x+memAddress+288, 992);
+			do Memory.poke(x+memAddress+320, 992);
+			do Memory.poke(x+memAddress+352, 992);
+			do Memory.poke(x+memAddress+384, 992);
+			do Memory.poke(x+memAddress+416, 992);
+			do Memory.poke(x+memAddress+448, 992);
+			do Memory.poke(x+memAddress+480, 992);
+			let x = x + 512;
 		}
 		return;
 	}
