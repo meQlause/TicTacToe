@@ -2,8 +2,81 @@ function Stage.new 0
 push constant 1
 call Memory.alloc 1
 pop pointer 0
-push constant 1
+push constant 9
+call Array.new 1
 pop this 0
+push constant 0
+push this 0
+add
+push constant 16550
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 0
+add
+push constant 16557
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 0
+add
+push constant 16564
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 0
+add
+push constant 18598
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 0
+add
+push constant 18605
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 0
+add
+push constant 18612
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push this 0
+add
+push constant 20742
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push this 0
+add
+push constant 20749
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push this 0
+add
+push constant 20756
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push pointer 0
 return
 function Stage.create 2
@@ -405,5 +478,81 @@ add
 pop local 1
 goto WHILE_EXP7
 label WHILE_END7
+push constant 0
+return
+function Stage.hor 2
+push argument 0
+pop pointer 0
+push constant 1
+pop local 1
+push argument 1
+push constant 1
+sub
+push this 0
+add
+pop pointer 1
+push that 0
+push constant 32
+push constant 32
+call Math.multiply 2
+add
+pop local 0
+label WHILE_EXP0
+push local 1
+push constant 4
+lt
+not
+if-goto WHILE_END0
+push local 0
+push constant 160
+add
+push local 1
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push local 1
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push local 1
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push local 1
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push local 1
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 1
+push constant 1
+add
+pop local 1
+goto WHILE_EXP0
+label WHILE_END0
 push constant 0
 return

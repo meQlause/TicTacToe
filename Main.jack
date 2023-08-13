@@ -3,6 +3,16 @@ class Main {
 		var Stage a;
 		let a = Stage.new();
 		do a.create();
+		do a.hor(1);
+		do a.hor(2);
+		do a.hor(3);
+		do a.hor(4);
+		do a.hor(5);
+		do a.hor(6);
+		do a.hor(7);
+		do a.hor(8);
+		do a.hor(9);
+
 		return;
    }
 }
