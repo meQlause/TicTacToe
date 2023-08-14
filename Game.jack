@@ -1,0 +1,106 @@
+class Game {
+    field Array win_con1, win_con2, win_con3, win_con4, win_con5, win_con6, all_win_con, game;
+    field Player player1, player2, used;
+    constructor Game new() {
+        let player1 = Player.new();
+        let player2 = Player.new();
+        let win_con1 = Array.new(3);
+        let win_con1[0] = 1;
+        let win_con1[1] = 2;
+        let win_con1[2] = 3;
+        let win_con2 = Array.new(3);
+        let win_con2[0] = 7;
+        let win_con2[1] = 8;
+        let win_con2[2] = 9;
+        let win_con3 = Array.new(3);
+        let win_con3[0] = 1;
+        let win_con3[1] = 4;
+        let win_con3[2] = 7;
+        let win_con4 = Array.new(3);
+        let win_con4[0] = 3;
+        let win_con4[1] = 6;
+        let win_con4[2] = 9;
+        let win_con5 = Array.new(3);
+        let win_con5[0] = 1;
+        let win_con5[1] = 5;
+        let win_con5[2] = 9;
+        let win_con6 = Array.new(3);
+        let win_con6[0] = 3;
+        let win_con6[1] = 5;
+        let win_con6[2] = 7;
+        let all_win_con = Array.new(6);
+        let all_win_con[0] = win_con1;
+        let all_win_con[1] = win_con2;
+        let all_win_con[2] = win_con3;
+        let all_win_con[3] = win_con4;
+        let all_win_con[4] = win_con5;
+        let all_win_con[5] = win_con6;
+        let game = Array.new(9);
+        let used = Player.new();
+        let game[0] = 1;
+        let game[1] = 2;
+        let game[2] = 3;
+        let game[3] = 4;
+        let game[4] = 5;
+        let game[5] = 6;
+        let game[6] = 7;
+        let game[7] = 8;
+        let game[8] = 9;
+        return this;
+    }
+
+    method bool is_available(int i) {
+        var int x;
+        let x = 0;
+        while (x < used.length() + 1) {
+            if (used.get(x) = i) {
+                return false;
+            }
+        }
+        return true;
+    }
+    method int get_win_con(int x, int y) {
+        var Array a;
+        let a = all_win_con[x];
+        return a[y];
+    } 
+
+    method void p1(int i) {
+        if (i < 10) {
+            do used.add(i);
+            do player1.add(i);
+        }
+        return;
+    }
+    method void p2(int i) {
+        if (i < 10) {
+            do used.add(i);
+            do player2.add(i);
+        }
+        return;
+    }    
+    method bool check_win(Player player) {
+        var int i, x, y, z, val;
+        let i = 0;
+        let x = 0;
+        let y = 0;
+        let z = 0;
+        while (x < 6) {
+            while (y < 3) {
+                let val = get_win_con(x, y);
+                while (i < player.length()) {
+                    if (val = player[i]) {
+                        let z = z + 1;
+                        let i = player.length();
+                    }
+                    let i = i + 1;
+                }
+                let y = y + 1;
+            }
+            if (z = 3) {return true;} 
+            let z = 0;
+            let x = x + 1;
+        }
+        return false;
+    }
+}

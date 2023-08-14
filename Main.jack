@@ -12,7 +12,6 @@ class Main {
 		do a.ver(7);
 		do a.ver(8);
 		do a.ver(9);
-
 		return;
    }
 }

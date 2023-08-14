@@ -1,6 +1,5 @@
 class Stage {
-	field Array horPosition;
-	field Array verPosition;
+	field Array horPosition, verPosition;
     constructor Stage new() {
 		let horPosition = Array.new(9);
 		let horPosition[0] = 16550; 
