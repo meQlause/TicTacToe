@@ -425,8 +425,15 @@ push constant 1
 add
 pop local 3
 push local 3
-call Output.printInt 1
-pop temp 0
+push constant 3
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+not
+return
+label IF_FALSE1
 label IF_FALSE0
 push local 0
 push constant 1
@@ -434,6 +441,8 @@ add
 pop local 0
 goto WHILE_EXP2
 label WHILE_END2
+push constant 0
+pop local 0
 push local 2
 push constant 1
 add
@@ -442,6 +451,8 @@ goto WHILE_EXP1
 label WHILE_END1
 push constant 0
 pop local 3
+push constant 0
+pop local 2
 push local 1
 push constant 1
 add

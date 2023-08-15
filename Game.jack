@@ -81,22 +81,21 @@ class Game {
         let x = 0;
         let y = 0;
         let z = 0;
-        
         while (x < 6) {
             while (y < 3) {
                 let val = get_win_con(x, y);
                 while (i < player.length()) {
-                    if (val = player.get(i)) {
+                    if (val = player.get(i)) {           
                         let z = z + 1;
-                        do Output.printInt(z);
+                        if (z = 3) {return true;}
                     }
                     let i = i + 1;
                 }
-                let y = y + 1;
-                
+                let i = 0;
+                let y = y + 1;   
             }
-            
             let z = 0;
+            let y = 0;
             let x = x + 1;
         }
         return false;

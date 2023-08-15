@@ -13,7 +13,7 @@ class Main {
 		let exit = false;
 		let player1 = Player.new();
 		let player2 = Player.new();
-		let switch = player1;
+		let switch = player2;
 		while (~(exit)) {
 			while (key = 0) {
 				let key = Keyboard.keyPressed();

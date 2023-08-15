@@ -14,9 +14,7 @@ class Player {
     }
 
     method int get(int i) {
-        var int a;
-        let a = arr[i];
-        return a;
+        return arr[i];
     }
 
     method int length() {
