@@ -1,9 +1,7 @@
 class Game {
     field Array win_con1, win_con2, win_con3, win_con4, win_con5, win_con6, all_win_con, game;
-    field Player player1, player2, used;
+    field Player used;
     constructor Game new() {
-        let player1 = Player.new();
-        let player2 = Player.new();
         let win_con1 = Array.new(3);
         let win_con1[0] = 1;
         let win_con1[1] = 2;
@@ -49,13 +47,14 @@ class Game {
         return this;
     }
 
-    method bool is_available(int i) {
+    method boolean is_available(int i) {
         var int x;
         let x = 0;
-        while (x < used.length() + 1) {
+        while (x < used.length()) {
             if (used.get(x) = i) {
                 return false;
             }
+            let x = x + 1;
         }
         return true;
     }
@@ -65,39 +64,38 @@ class Game {
         return a[y];
     } 
 
-    method void p1(int i) {
+    method int play(int i, Player player) {
         if (i < 10) {
             do used.add(i);
-            do player1.add(i);
+            do player.add(i);
         }
-        return;
+        return i;
+    }   
+    method boolean is_finished() {
+        if (used.length() = 9) {return true;}
+        return false;
     }
-    method void p2(int i) {
-        if (i < 10) {
-            do used.add(i);
-            do player2.add(i);
-        }
-        return;
-    }    
-    method bool check_win(Player player) {
+    method boolean check_win(Player player) {
         var int i, x, y, z, val;
         let i = 0;
         let x = 0;
         let y = 0;
         let z = 0;
+        
         while (x < 6) {
             while (y < 3) {
                 let val = get_win_con(x, y);
                 while (i < player.length()) {
-                    if (val = player[i]) {
+                    if (val = player.get(i)) {
                         let z = z + 1;
-                        let i = player.length();
+                        do Output.printInt(z);
                     }
                     let i = i + 1;
                 }
                 let y = y + 1;
+                
             }
-            if (z = 3) {return true;} 
+            
             let z = 0;
             let x = x + 1;
         }

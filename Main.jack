@@ -1,17 +1,200 @@
 class Main {
    function void main() {
-		var Stage a;
-		let a = Stage.new();
-		do a.create();
-		do a.ver(1);
-		do a.ver(2);
-		do a.ver(3);
-		do a.ver(4);
-		do a.ver(5);
-		do a.ver(6);
-		do a.ver(7);
-		do a.ver(8);
-		do a.ver(9);
+		var Stage st;
+		var Game gm;
+		var Player player1, player2, switch;
+		var int x;
+		var char key;
+		var boolean exit;
+		let gm = Game.new();
+		let st = Stage.new();
+		do st.create();
+		let x = 0;
+		let exit = false;
+		let player1 = Player.new();
+		let player2 = Player.new();
+		let switch = player1;
+		while (~(exit)) {
+			while (key = 0) {
+				let key = Keyboard.keyPressed();
+			}
+			if (key = 49 ) {
+				if (switch = player1) {
+					if (gm.is_available(1)) {
+						do st.ver(gm.play(1, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player2;
+					}
+				} else {
+					if (gm.is_available(1)) {
+						do st.hor(gm.play(1, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player1;
+					}
+				}
+			}
+			if (key = 50 ) {
+				if (switch = player1) {
+					if (gm.is_available(2)) {
+						do st.ver(gm.play(2, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player2;
+					}
+				} else {
+					if (gm.is_available(2)) {
+						do st.hor(gm.play(2, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player1;
+					}
+				}
+			}
+			if (key = 51 ) {
+				if (switch = player1) {
+					if (gm.is_available(3)) {
+						do st.ver(gm.play(3, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player2;
+					}
+				} else {
+					if (gm.is_available(3)) {
+						do st.hor(gm.play(3, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player1;
+					}
+				}
+			}
+			if (key = 52 ) {
+				if (switch = player1) {
+					if (gm.is_available(4)) {
+						do st.ver(gm.play(4, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player2;
+					}
+				} else {
+					if (gm.is_available(4)) {
+						do st.hor(gm.play(4, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player1;
+					}
+				}
+			}
+			if (key = 53 ) {
+				if (switch = player1) {
+					if (gm.is_available(5)) {
+						do st.ver(gm.play(5, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player2;
+					}
+				} else {
+					if (gm.is_available(5)) {
+						do st.hor(gm.play(5, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player1;
+					}
+				}
+			}
+			if (key = 54 ) {
+				if (switch = player1) {
+					if (gm.is_available(6)) {
+						do st.ver(gm.play(6, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player2;
+					}
+				} else {
+					if (gm.is_available(6)) {
+						do st.hor(gm.play(6, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player1;
+					}
+				}
+			}
+			if (key = 55 ) {
+				if (switch = player1) {
+					if (gm.is_available(7)) {
+						do st.ver(gm.play(7, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player2;
+					}
+				} else {
+					if (gm.is_available(7)) {
+						do st.hor(gm.play(7, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player1;
+					}
+				}
+			}
+			if (key = 56 ) {
+				if (switch = player1) {
+					if (gm.is_available(8)) {
+						do st.ver(gm.play(8, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player2;
+					}
+				} else {
+					if (gm.is_available(8)) {
+						do st.hor(gm.play(8, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player1;
+					}
+				}
+			}
+			if (key = 57 ) {
+				if (switch = player1) {
+					if (gm.is_available(9)) {
+						do st.ver(gm.play(9, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player2;
+					}
+				} else {
+					if (gm.is_available(9)) {
+						do st.hor(gm.play(9, switch));
+						if (gm.check_win(switch)) {
+							let exit = true;
+						}
+						let switch = player1;
+					}
+				}
+			}
+			if (gm.is_finished()) {let exit = true;}
+
+			while (~(key = 0)) {
+				let key = Keyboard.keyPressed();
+			}
+		}
 		return;
    }
 }

@@ -2,6 +2,9 @@ function Player.new 0
 push constant 2
 call Memory.alloc 1
 pop pointer 0
+push constant 9
+call Array.new 1
+pop this 0
 push constant 0
 pop this 1
 push pointer 0

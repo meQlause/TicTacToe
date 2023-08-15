@@ -1,0 +1,25 @@
+class Player {
+    field Array arr;
+    field int length;
+    constructor Player new() {
+        let arr = Array.new(9);
+        let length = 0;
+        return this;
+    }
+
+    method void add(int i) {
+        let arr[length] = i;
+        let length = length + 1;
+        return; 
+    }
+
+    method int get(int i) {
+        var int a;
+        let a = arr[i];
+        return a;
+    }
+
+    method int length() {
+        return length;
+    }
+}
