@@ -8,12 +8,12 @@ class Main {
 		var boolean exit;
 		let gm = Game.new();
 		let st = Stage.new();
-		do st.create();
-		let x = 0;
-		let exit = false;
 		let player1 = Player.new();
 		let player2 = Player.new();
-		let switch = player2;
+		let exit = false;
+		let x = 0;
+		do st.create();
+		let switch = player1;
 		while (~(exit)) {
 			while (key = 0) {
 				let key = Keyboard.keyPressed();
